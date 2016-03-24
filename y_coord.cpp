@@ -26,6 +26,7 @@ int main()
   distanceTransform(img,dist, CV_DIST_L2, 3);
   normalize(dist,dist, 0.0, 1.0, NORM_MINMAX);
   threshold(dist,dist, .7, 1., CV_THRESH_BINARY);
+
   vector<vector<Point> > contours;
   vector<Vec4i> hierarchy;
   Mat dist_8u;
@@ -47,6 +48,38 @@ int main()
     mc[i] = Point2f( mu[i].m10/mu[i].m00 , mu[i].m01/mu[i].m00 );
     Rect myROI(int(mc[i].x-25),int(mc[i].y-50),50,150);
     imshow("First_note found",img(myROI));
+    if (i==1)
+    {
+      imwrite("1.jpg",img(myROI));
+    }
+    if (i==2)
+    {
+      imwrite("2.jpg",img(myROI));
+    }
+    if (i==3)
+    {
+      imwrite("3.jpg",img(myROI));
+    }
+    if (i==4)
+    {
+      imwrite("4.jpg",img(myROI));
+    }
+    if (i==5)
+    {
+      imwrite("5.jpg",img(myROI));
+    }
+    if (i==6)
+    {
+      imwrite("6.jpg",img(myROI));
+    }
+    if (i==7)
+    {
+      imwrite("7.jpg",img(myROI));
+    }
+    if (i==0)
+    {
+      imwrite("8.jpg",img(myROI));
+    }
     waitKey(0);
   }
 
